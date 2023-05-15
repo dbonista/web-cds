@@ -1,0 +1,17 @@
+{
+	"manifest_version": 3,
+	"name": "Athena On Chrome",
+	"version": "1.0.0",
+	"content_scripts": [
+		{
+			"js": ["athena.js"],
+			"matches": ["https://preview.athenahealth.com/*"],
+			"run_at": "document_end",
+			"all_frames": true
+		}
+	],
+	"permissions": [ "nativeMessaging", "tabs" ],
+	"background": {
+	  "service_worker": "background.js"
+	}
+}
