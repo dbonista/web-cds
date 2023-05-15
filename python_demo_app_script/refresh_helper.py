@@ -7,17 +7,7 @@
 import sys
 import json
 import struct
-from datetime import datetime
 import time
-
-# Read a message from stdin and decode it.
-def getMessage():
-    rawLength = sys.stdin.buffer.read(4)
-    if len(rawLength) == 0:
-        sys.exit(0)
-    messageLength = struct.unpack('@I', rawLength)[0]
-    message = sys.stdin.buffer.read(messageLength).decode('utf-8')
-    return json.loads(message)
 
 # Encode a message for transmission,
 # given its content.
@@ -35,3 +25,14 @@ def sendMessage(encodedMessage):
     sys.stdout.buffer.write(encodedMessage['length'])
     sys.stdout.buffer.write(encodedMessage['content'])
     sys.stdout.buffer.flush()
+
+# Read patient context stream, save to file
+while True:
+    with open("/Applications/web-cds/python_demo_app_script/refresh.txt", "r") as f:
+        if f.read() == 'refresh':
+            f.close()
+            sendMessage(encodeMessage("refresh"))
+            with open("/Applications/web-cds/python_demo_app_script/refresh.txt", "w") as f:
+                pass #do nothing
+        f.close()
+    time.sleep(1) #just for POC - don't be constantly opening/closing

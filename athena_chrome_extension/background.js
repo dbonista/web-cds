@@ -1,5 +1,5 @@
-var port = chrome.runtime.connectNative('com.athena.chrome.helper');
-var refresh_port = chrome.runtime.connectNative('com.athena.chrome.refresh');
+var port = chrome.runtime.connectNative('com.athena.context');
+var refresh_port = chrome.runtime.connectNative('com.athena.refresh');
 
 refresh_port.onMessage.addListener(function(msg) {
   console.log("Received: " + msg);

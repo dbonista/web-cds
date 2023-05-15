@@ -20,6 +20,6 @@ def getMessage():
 # Read patient context stream, save to file
 while True:
     receivedMessage = getMessage()
-    f = open("/Applications/djbhelper/context.ndjson", "a")
+    f = open("/Applications/web-cds/python_demo_app_script/context.ndjson", "a")
     f.write("\r\n{0}".format(receivedMessage))
     f.close()

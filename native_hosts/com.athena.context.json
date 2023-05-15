@@ -1,0 +1,10 @@
+// Copyright 2023 Daniel Bonistalli. All rights reserved.
+{
+  "name": "com.athena.context",
+  "description": "Athena Context Helper",
+  "path": "/Applications/web-cds/python_demo_app_script/native_app.py",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://oahkenadojojkmbhfeengipegfgfkokp/"
+  ]
+}

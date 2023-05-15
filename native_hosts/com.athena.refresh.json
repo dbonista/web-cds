@@ -1,0 +1,10 @@
+// Copyright 2023 Daniel Bonistalli. All rights reserved.
+{
+  "name": "com.athena.refresh",
+  "description": "Athena Refresh Helper",
+  "path": "/Applications/web-cds/python_demo_app_script/refresh_helper.py",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://oahkenadojojkmbhfeengipegfgfkokp/"
+  ]
+}
