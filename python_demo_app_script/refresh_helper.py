@@ -30,9 +30,8 @@ def sendMessage(encodedMessage):
 while True:
     with open("/Applications/web-cds/python_demo_app_script/refresh.txt", "r") as f:
         if f.read() == 'refresh':
-            f.close()
             sendMessage(encodeMessage("refresh"))
-            with open("/Applications/web-cds/python_demo_app_script/refresh.txt", "w") as f:
+            with open("/Applications/web-cds/python_demo_app_script/refresh.txt", "w") as w:
                 pass #do nothing
-        f.close()
+            f.close()
     time.sleep(1) #just for POC - don't be constantly opening/closing
