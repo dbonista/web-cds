@@ -34,4 +34,5 @@ while True:
             with open("/Applications/web-cds/python_demo_app_script/refresh.txt", "w") as w:
                 pass #do nothing
             f.close()
+            break # break out of loop
     time.sleep(1) #just for POC - don't be constantly opening/closing
